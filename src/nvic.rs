@@ -1,6 +1,7 @@
 use crate::_start;
 
 #[no_mangle]
+#[link_section = ".text"]
 pub unsafe fn reset_handler() -> ! {
     _start();
 }

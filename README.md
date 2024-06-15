@@ -9,3 +9,19 @@ Rust is a very promising programming language, and it is very well suited for em
 
 ## Repo Branches
 This repo may contain many branches as templates or branches that uses crates and so.
+
+## How to build
+In my other repos featuring `Embedded-C` programming language there was a `Makefile` to automate the build process. But in this repo, I am using `cargo` to build the project. So, to build the project, you need to run the following command:
+
+```bash
+cargo build
+```
+
+This command will build the project and generate the binary file in the `target/thumbv7m-none-eabi/debug/` directory.
+
+## How to flash
+To flash the binary file to the microcontroller, you can use the `openocd` tool. You can install it using the following command:
+
+```bash
+openocd -f stlink.cfg -c "program target/thumbv7m-none-eabi/debug/rust0 verify reset exit"
+```
